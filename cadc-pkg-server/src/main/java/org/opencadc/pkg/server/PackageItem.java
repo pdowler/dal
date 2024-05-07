@@ -96,7 +96,7 @@ public class PackageItem {
     }
 
     /**
-     * Creates a resource for a package. The relative path is used to create
+     * Creates a PackageItem for a file. The relative path is used to create
      * the file structure inside a package.
      *
      * @param relativePath path to the resource in the package.
@@ -115,11 +115,11 @@ public class PackageItem {
     }
 
     /**
-     * Creates a resource for a package. The relative path is used to create
+     * Creates a PackageItem for a symbolic link. The relative path is used to create
      * the file structure inside a package.
      *
      * @param relativePath path to the resource in the package.
-     * @param linkTarget path to the resource in the package.
+     * @param linkTarget relative path to the link target in the package.
      */
     public PackageItem(String relativePath, String linkTarget) {
         if (!StringUtil.hasText(relativePath)) {
@@ -186,6 +186,21 @@ public class PackageItem {
      */
     public boolean isSymbolicLink() {
         return linkTarget != null;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("PackageItem[path=").append(relativePath);
+        if (isDirectory()) {
+            sb.append(",type=directory");
+        } else if (isFile()) {
+            sb.append(",type=file");
+        } else {
+            sb.append(",type=link,target=").append(linkTarget);
+        }
+        sb.append("]");
+        return sb.toString();
     }
 
 }
