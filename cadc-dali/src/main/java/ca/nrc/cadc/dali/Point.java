@@ -73,7 +73,7 @@ package ca.nrc.cadc.dali;
  *
  * @author pdowler
  */
-public class Point implements Shape {
+public class Point {
     private final double longitude;
     private final double latitude;
 

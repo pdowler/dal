@@ -98,6 +98,7 @@ public class Circle implements Shape {
         return this.center.equals(rhs.getCenter()) && this.radius == rhs.radius;
     }
 
+    @Override
     public Point getCenter() {
         return center;
     }

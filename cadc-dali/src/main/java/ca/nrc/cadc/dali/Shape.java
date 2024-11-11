@@ -73,4 +73,5 @@ package ca.nrc.cadc.dali;
  * @author pdowler
  */
 public interface Shape {
+    Point getCenter();
 }

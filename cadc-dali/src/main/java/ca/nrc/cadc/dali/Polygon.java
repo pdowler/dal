@@ -160,6 +160,7 @@ public class Polygon implements Shape {
         return ccw;
     }
     
+    @Override
     public Point getCenter() {
         if (center == null) {
             initProps();

@@ -96,6 +96,11 @@ public class Range implements Shape {
     }
 
     @Override
+    public Point getCenter() {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override
     public boolean equals(Object obj) {
         if (obj == null) {
             return false;
